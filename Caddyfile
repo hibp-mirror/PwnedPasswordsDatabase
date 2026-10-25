@@ -20,6 +20,14 @@ hibp.localhost {
 		}
 	}
 
+	# Static example client: / serves index.html by default
+	@spa path / /index.html /hibp-check.js /style.css
+	handle @spa {
+		file_server {
+			root ./web
+		}
+	}
+
 	# Fallback: Caddy would otherwise return an empty 200 for unmatched paths
 	handle {
 		respond 404

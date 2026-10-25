@@ -1,0 +1,34 @@
+body {
+   font-family: system-ui, sans-serif;
+   /* ch is measured against "0"; ~82ch ≈ 110 average characters of prose. */
+   max-width: 82ch;
+   margin: 4rem auto;
+   padding: 0 1rem;
+}
+pre {
+   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+   font-size: 0.875rem;
+   line-height: 1.4;
+   background: #f6f8fa;
+   border-radius: 6px;
+   padding: 0.75rem 1rem;
+   overflow-x: auto;
+}
+input,
+button {
+   font-size: 1rem;
+   padding: 0.4rem 0.6rem;
+}
+[data-result] {
+   min-height: 1.5rem;
+   font-weight: 600;
+}
+[data-result="pwned"] {
+   color: #b00020;
+}
+[data-result="safe"] {
+   color: #1a7f37;
+}
+[data-result="error"] {
+   color: #b45309;
+}

@@ -4,6 +4,8 @@ This is a copy of Troy Hunt's HaveIBeenPwned (HIBP) Password database, downloade
 
 last update: Oct 25, 2026 (no change since Jul 21, 2026)
 
+<kbd><img width="879" height="584" alt="Image" src="https://github.com/user-attachments/assets/8fdbafa5-b780-4cee-9266-025e94a40c00" /></kbd>
+
 ## Static File API
 
 The included [`./Caddyfile`](/Caddyfile) serves the official `/range/:anonk` API by mapping to `./pwnedpasswords/XX/{anonk}`.
