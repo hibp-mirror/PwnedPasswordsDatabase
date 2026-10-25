@@ -4,6 +4,18 @@ This is a copy of Troy Hunt's HaveIBeenPwned (HIBP) Password database, downloade
 
 last update: Oct 25, 2026 (no change since Jul 21, 2026)
 
+## Static File API
+
+The included [`./Caddyfile`](/Caddyfile) serves the official `/range/:anonk` API by mapping to `./pwnedpasswords/XX/{anonk}`.
+
+```sh
+caddy run --config ./Caddyfile --adapter 'caddyfile'
+```
+
+```sh
+curl --fail-with-body -sS 'https://hibp.localhost/range/5BAA6'
+```
+
 ## Git Clone
 
 Git clone is slower, but reliably resumable and tracks changes.

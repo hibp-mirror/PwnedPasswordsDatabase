@@ -1,0 +1,27 @@
+# caddy run --config ./Caddyfile --adapter 'caddyfile'
+hibp.localhost {
+	tls internal
+
+	encode gzip zstd
+
+	# Official HIBP Pwned Passwords API: /range/5BAA6 -> pwnedpasswords/5B/5BAA6
+	handle_path /range/* {
+		@range path_regexp range ^/([0-9a-fA-F]{2})([0-9a-fA-F]{3})$
+		rewrite @range /{re.range.1}/{re.range.1}{re.range.2}
+		file_server {
+			root ./pwnedpasswords
+		}
+	}
+
+	# Raw tree (sanity check)
+	handle_path /pwnedpasswords/* {
+		file_server {
+			root ./pwnedpasswords
+		}
+	}
+
+	# Fallback: Caddy would otherwise return an empty 200 for unmatched paths
+	handle {
+		respond 404
+	}
+}
