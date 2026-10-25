@@ -1,6 +1,22 @@
 # Pwned Passwords Database
 
-This is a copy of Troy Hunt's HaveIBeenPwned (HIBP) Password database, downloaded using one of the officially recommended methods:
+This is a copy of Troy Hunt's HaveIBeenPwned (HIBP) Password database, downloaded using one of the officially recommended curl method.
+
+## Git Clone
+
+Git clone is slower, but reliably resumable and tracks changes.
+
+```sh
+git clone --filter=blob:none --no-checkout https://github.com/hibp-mirror/PwnedPasswordsDatabase.git
+cd ./PwnedPasswordsDatabase/
+
+git backfill --min-batch-size=1000
+git switch main
+```
+
+## Official Download
+
+The full download via `curl` is fast, but downloads every file each time.
 
 ```sh
 curl --silent --retry 10 --retry-all-errors \
