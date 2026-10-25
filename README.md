@@ -2,6 +2,8 @@
 
 This is a copy of Troy Hunt's HaveIBeenPwned (HIBP) Password database, downloaded using one of the officially recommended curl method.
 
+last update: Oct 25, 2026 (no change since Jul 21, 2026)
+
 ## Git Clone
 
 Git clone is slower, but reliably resumable and tracks changes.
